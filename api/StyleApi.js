@@ -1,6 +1,5 @@
 const mongoose = require('../db/connection.js')
 
-
 const Style = mongoose.Schema({
     name: String,
     description: String,
@@ -23,10 +22,9 @@ function updateStyle(styleId, style) {
 function deleteStyle(styleId) {
     return StyleCollection.findByIdAndDelete(styleId)
 }
+/*module.exports = router;*/
 
-module.exports = router;
-
-mudule.exports = {
+module.exports = {
     getAllStyles,
     createNewStyle,
     updateStyle,

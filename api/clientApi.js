@@ -18,17 +18,16 @@ function createNewClient(client) {
 }
 
 function updateClient(clientId, client) {
-    return ClientCollection.findByIdAndUpdate(clientId , client)
+    return ClientCollection.findByIdAndUpdate(clientId, client)
 }
 
 function deleteClient(clientId) {
     return ClientCollection.findByIdAndDelete(clientId)
 }
 
+/*module.exports = router;*/
 
-
-
-module.export = {
+module.exports = {
     getAllClients,
     createNewClient,
     updateClient,

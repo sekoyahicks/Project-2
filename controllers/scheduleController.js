@@ -1,9 +1,9 @@
 const express = require("express");
 const router = express.Router();
-const styleApi = require("../api/scheduleApi")
+const scheduleApi = require("../api/scheduleApi")
 
 router.get("/", function(req, res) {
-    scheduleApi.getAllSchedule().then(schedules => {
+    scheduleApi.getAllSchedules().then(schedules => {
       res.send(schedules);
       //res.render('client', {clients});
     });

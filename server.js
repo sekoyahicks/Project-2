@@ -1,6 +1,6 @@
-const clientApi = require('./api/clientApi.js');
-const styleController = require('./controllers/clientController');
-const scheduleApi = require('./api/scheduleApi.js');
+const clientController = require('./controllers/clientController');
+const styleController = require('./controllers/styleController');
+const scheduleController = require('./controllers/scheduleController');
 const express = require('express');
 const app = express();
 const methodOverride = require('method-override');
@@ -11,9 +11,9 @@ app.use(methodOverride('_method'))
 app.use(express.static(__dirname + '/public'))
 app.set('view engine', 'hbs')
 
-app.use('/', clientApi)
+app.use('/', clientController)
 app.use('/styles', styleController)
-app.use('/schedules', scheduleApi)
+app.use('/schedules', scheduleController)
 
 const PORT = 3000;
 app.listen(PORT, () => {

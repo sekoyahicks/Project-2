@@ -1,5 +1,4 @@
 const mongoose = require('../db/connection.js')
-
 const Schedule = mongoose.Schema({
     appointment: String,
 });

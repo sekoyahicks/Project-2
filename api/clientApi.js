@@ -1,5 +1,4 @@
 const mongoose = require("../db/connection.js");
-
 const Client = mongoose.Schema({
   name: String,
   age: Number,
@@ -13,6 +12,7 @@ const ClientCollection = mongoose.model("Client", Client);
 function getAllClients() {
     return ClientCollection.find()
 }
+
 function createNewClient(client) {
     return ClientCollection.create(client)
 }
@@ -24,8 +24,6 @@ function updateClient(clientId, client) {
 function deleteClient(clientId) {
     return ClientCollection.findByIdAndDelete(clientId)
 }
-
-/*module.exports = router;*/
 
 module.exports = {
     getAllClients,

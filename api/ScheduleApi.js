@@ -8,37 +8,25 @@ const Schedule = mongoose.Schema({
 
 const ScheduleCollection = mongoose.model('Schedule', Schedule)//Schedule to select date
 
-//Grab date
-router.get("/", function(req, res) {
-    ScheduleCollection.find()
-        .then(schedules => {
-            res.send(schedules)
-            //res.render('client', {clients});
-        });
-            });
+function getAllSchedules() {
+    return ScheduleCollection.find()
+}
+function createNewSchedule(schedule) {
+    return ScheduleCollection.create(schedule)
+}
 
-//Create requested appointment time
-router.post("/", function(req, res) {
-    ScheduleCollection.create(req.body)
-        .then(schedule => {
-            res.send(schedule)
-        })
-});
+function updateSchedule(scheduleId, schedule) {
+    return ScheduleCollection.findByIdAndUpdate(scheduleId , schedule)
+}
 
-//Update appointment
-router.put("/:id", function(req, res) {
- ScheduleCollection.findByIdAndUpdate(req.params.id, req.body)
-    .then(() =>
-        res.send()
-    );
- });
-
-//Delete appointment
-router.delete("/:id", function(req, res) {
-    ScheduleCollection.findByIdAndDelete(req.params.id)
-        .then(() =>
-            res.send()
-    );
-});
-
+function deleteSchedule(scheduleId) {
+    return ScheduleCollection.findByIdAndDelete(scheduleId)
+}
 module.exports = router;
+
+module.exports = {
+    getAllSchedules,
+    createNewSchedule,
+    updateSchedule,
+    deleteSchedule
+}

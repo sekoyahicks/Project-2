@@ -1,6 +1,5 @@
 const mongoose = require('../db/connection.js')
-const express = require("express");
-const router = express.Router();
+
 
 const Style = mongoose.Schema({
     name: String,
@@ -10,36 +9,26 @@ const Style = mongoose.Schema({
 
 const StyleCollection = mongoose.model('Style', Style)
 
-router.get('/', function(req, res){
-    StyleCollection.find()
-        .then(styles => {
-            res.send(styles)
-            //res.render('client', {clients});
-        })
-            });
+function getAllStyles() {
+    return StyleCollection.find()
+}
+function createNewStyle(style) {
+    return StyleCollection.create(style)
+}
 
-//Field to input name
-router.post("/", function(req, res) {
-    StyleCollection.create(req.body)
-        .then(style => {
-            res.send(style)
-        })
-});
+function updateStyle(styleId, style) {
+    return StyleCollection.findByIdAndUpdate(styleId , style)
+}
 
-//Update name
-router.put("/:id", function(req, res) {
- StyleCollection.findByIdAndUpdate(req.params.id, req.body)
-    .then(() =>
-        res.send()
-    );
- });
-
-//Delete name
-router.delete("/:id", function(req, res) {
-    StyleCollection.findByIdAndDelete(req.params.id)
-    .then(() =>
-        res.send()
-    );
-});
+function deleteStyle(styleId) {
+    return StyleCollection.findByIdAndDelete(styleId)
+}
 
 module.exports = router;
+
+mudule.exports = {
+    getAllStyles,
+    createNewStyle,
+    updateStyle,
+    deleteStyle
+}

@@ -5,7 +5,7 @@ const clientApi = require("../api/clientApi")
 
 router.get("/", function(req, res) {
     scheduleApi.getAllSchedules().then(schedules => {
-      res.send(schedules);
+      res.render(schedules);
       //res.render('client', {clients});
     });
   });
@@ -25,14 +25,14 @@ router.get("/", function(req, res) {
   //Field to input name
   router.post("/", function(req, res) {
     scheduleApi.createNewSchedule(req.body).then(schedule => {
-      res.send(schedule);
+      res.render(schedule);
     });
   });
   
   //Update name
   router.put("/:id", function(req, res) {
     scheduleApi.updateSchedule(req.params.id, req.body).then(() =>
-      res.send()
+      res.render()
     );
   });
   

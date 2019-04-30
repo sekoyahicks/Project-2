@@ -4,7 +4,7 @@ const clientApi = require("../api/clientApi")
 
 router.get("/", function(req, res) {
     clientApi.getAllClients().then(clients => {
-      res.send(clients);
+      res.render(clients);
       //res.render('client', {clients});
     });
   });
@@ -12,7 +12,7 @@ router.get("/", function(req, res) {
   //Field to input name
   router.post("/", function(req, res) {
     clientApi.createNewClient(req.body).then(client => {
-      res.send(client);
+      res.render(client);
       //res.render('client', {clients});
     });
   });
@@ -20,7 +20,7 @@ router.get("/", function(req, res) {
   //Update name
   router.put("/:id", function(req, res) {
     clientApi.updateClient(req.params.id, req.body).then(() =>
-      res.send()
+      res.render()
       //res.render()
     );
   });

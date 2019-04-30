@@ -7,6 +7,10 @@ const Style = mongoose.Schema({
 
 const StyleCollection = mongoose.model('Style', Style)
 
+function getStyleById(styleId) {
+    return StyleCollection.findById(styleId)
+}
+
 function getAllStyles() {
     return StyleCollection.find()
 }
@@ -15,7 +19,7 @@ function createNewStyle(style) {
 }
 
 function updateStyle(styleId, style) {
-    return StyleCollection.findByIdAndUpdate(styleId , style)
+    return StyleCollection.findByIdAndUpdate(styleId, style)
 }
 
 function deleteStyle(styleId) {
@@ -26,5 +30,6 @@ module.exports = {
     getAllStyles,
     createNewStyle,
     updateStyle,
-    deleteStyle
+    deleteStyle,
+    getStyleById
 }

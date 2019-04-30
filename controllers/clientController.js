@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const clientApi = require("../api/clientApi")
+const clientApi = require("../api/clientApi");
 
 router.get("/", function(req, res) {
     clientApi.getAllClients().then(clients => {

@@ -1,4 +1,3 @@
-const mongoose = require("mongoose");
 // const connectionString = "mongodb://localhost/Project-2";
 
 // //newUrlParser disables the deprication warning

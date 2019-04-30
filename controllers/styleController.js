@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const styleApi = require("../api/styleApi")
+const styleApi = require("./api/styleApi")
 
 router.get("/:styleId", function(req, res) {
   styleApi.getStyleById(req.params.styleId).then(style => {

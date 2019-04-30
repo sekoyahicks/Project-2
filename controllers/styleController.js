@@ -32,7 +32,7 @@ router.get("/", function(req, res) {
   //Delete name
   router.delete("/:id", function(req, res) {
     styleApi.deleteStyle(req.params.id).then(() =>
-      res.send()
+      res.render()
     );
   });
   

@@ -39,7 +39,7 @@ router.get("/", function(req, res) {
   //Delete name
   router.delete("/:id", function(req, res) {
     scheduleApi.deleteSchedule(req.params.id).then(() =>
-      res.send()
+      res.render()
     );
   });
   

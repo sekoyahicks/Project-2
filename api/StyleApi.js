@@ -27,9 +27,9 @@ function deleteStyle(styleId) {
 }
 
 module.exports = {
+    getStyleById,
     getAllStyles,
     createNewStyle,
     updateStyle,
     deleteStyle,
-    getStyleById
 }

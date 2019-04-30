@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const scheduleApi = require("../api/scheduleApi")
+const clientApi = require("../api/clientApi")
 
 router.get("/", function(req, res) {
     scheduleApi.getAllSchedules().then(schedules => {
@@ -9,6 +10,18 @@ router.get("/", function(req, res) {
     });
   });
   
+  router.post("/register", function(req, res) {
+    clientApi.createNewClient(req.body)
+    .then(client => {
+      req.body.client=client
+      scheduleApi.createNewSchedule(req.body)
+      .then(schedule => {
+        console.log(schedule)
+        res.render('schedule', {schedule})
+      });
+    });
+  });
+
   //Field to input name
   router.post("/", function(req, res) {
     scheduleApi.createNewSchedule(req.body).then(schedule => {

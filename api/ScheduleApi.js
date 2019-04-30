@@ -1,7 +1,7 @@
 const mongoose = require('../db/connection.js')
 const ObjectId = mongoose.Schema.ObjectId
 const Schedule = mongoose.Schema({
-    client: { type: ObjectId, ref: "client" },
+    client: { type: ObjectId, ref: "Client" },
     style: { type: ObjectId, ref: "style" },
     appointment: String,
 });

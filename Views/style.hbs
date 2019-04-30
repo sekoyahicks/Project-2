@@ -2,11 +2,12 @@
 <h2>Description</h2>
 <p>{{style.description}}</p>
 
-<form action="#" method="post">
+<form action="/schedules/register" method="post">
+<input type="hidden" value="{{style._id}}">
 <input type="text" name="name" placeholder="Name">
 <input type="text" name="gender" placeholder="Gender">
-<input type="email" name="email" placeholder="email">
-<input type="number" name="number" placeholder="Phone Number">
-<input type="datetime-local" name="">
+<input type="text" name="email" placeholder="email">
+<input type="text" name="number" placeholder="Phone Number">
+<input type="datetime-local" name="appointment">
 <input type="submit" value="schedule">
 </form>

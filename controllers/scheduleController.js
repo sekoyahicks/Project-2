@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const scheduleApi = require("../api/scheduleApi")
+const scheduleApi = require("../api/scheduleApi.js")
 const clientApi = require("../api/clientApi")
 
 router.get("/", function(req, res) {

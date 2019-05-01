@@ -3,7 +3,7 @@ const router = express.Router();
 const scheduleApi = require("../api/scheduleApi.js")
 const clientApi = require("../api/clientApi")
 
-router.get("/", function(req, res) {
+router.get("/", function(_req, res) {
     scheduleApi.getAllSchedules().then(schedules => {
       res.render(schedules);
       //res.render('client', {clients});

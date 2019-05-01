@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const clientApi = require("../api/clientApi");
 
-router.get("/", function(req, res) {
+router.get("/", function(_req, res) {
     clientApi.getAllClients().then(clients => {
       //res.send({clients});
        res.render('client', {clients});

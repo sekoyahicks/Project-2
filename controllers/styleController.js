@@ -2,16 +2,16 @@ const express = require("express");
 const router = express.Router();
 const styleApi = require("../api/styleApi")
 
-router.get("/:styleId", function(req, res) {
-  styleApi.getStyleById(req.params.styleId).then(style => {
-    res.render('style', { style });
-  });
-});
-
-router.get("/", function(req, res) {
+router.get("/", function(_req, res) {
     styleApi.getAllStyles().then(styles => {
       console.log("styles ", styles);
       res.render('styles', { styles });
+    });
+  });
+
+  router.get("/:styleId", function(req, res) {
+    styleApi.getStyleById(req.params.styleId).then(style => {
+      res.render('style', { style });
     });
   });
   

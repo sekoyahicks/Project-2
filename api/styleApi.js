@@ -7,13 +7,14 @@ const Style = mongoose.Schema({
 
 const StyleCollection = mongoose.model('Style', Style)
 
+function getAllStyles() {
+    return StyleCollection.find()
+}
+
 function getStyleById(styleId) {
     return StyleCollection.findById(styleId)
 }
 
-function getAllStyles() {
-    return StyleCollection.find()
-}
 function createNewStyle(style) {
     return StyleCollection.create(style)
 }

@@ -10,23 +10,27 @@ router.get("/", function(_req, res) {
   });
 
   router.get("/:styleId", function(req, res) {
+    console.log("sfasdfasdfasdfasfhere")
+
     styleApi.getStyleById(req.params.styleId).then(style => {
-      // res.render('style', { style });
-      res.send(style);
+      res.render('style', { style });
+      // res.send(style);
     });
   });
   
   //Field to input name
   router.post("/", function(req, res) {
-    styleApi.createNewStyle(req.body).then(style => {
+    styleApi.createNewStyle(req.body).then(_style => {
       res.render("style");
     });
   });
   
   //Update name
   router.put("/:id", function(req, res) {
+    console.log(req.params.id)
+    console.log(req.body)
     styleApi.updateStyle(req.params.id, req.body).then(() =>
-      res.render()
+      res.send()
     );
   });
   

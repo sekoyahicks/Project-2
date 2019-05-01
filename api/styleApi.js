@@ -2,7 +2,8 @@ const mongoose = require('../db/connection.js')
 const Style = mongoose.Schema({
     name: String,
     description: String,
-    cost: Number
+    cost: Number,
+    image: String
 });
 
 const StyleCollection = mongoose.model('Style', Style)

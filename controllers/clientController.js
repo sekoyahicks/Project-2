@@ -4,16 +4,16 @@ const clientApi = require("../api/clientApi");
 
 router.get("/", function(req, res) {
     clientApi.getAllClients().then(clients => {
-      res.send({clients});
-      // res.render('client', {clients});
+      //res.send({clients});
+       res.render('client', {clients});
     });
   });
   
   //Field to input name
   router.post("/", function(req, res) {
     clientApi.createNewClient(req.body).then(client => {
-      res.send({client});
-      //res.render('client', {clients});
+      //res.send({client});
+      res.render('client', {clients});
     });
   });
   

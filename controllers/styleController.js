@@ -18,7 +18,7 @@ router.get("/", function(req, res) {
   //Field to input name
   router.post("/", function(req, res) {
     styleApi.createNewStyle(req.body).then(style => {
-      res.render(style);
+      res.render("style");
     });
   });
   

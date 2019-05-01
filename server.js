@@ -11,8 +11,8 @@ app.use(methodOverride('_method'))
 app.use(express.static(__dirname + '/public'))
 app.set('view engine', 'hbs')
 
-app.use('/', clientController)
-app.use('/styles', styleController)
+app.use('/clients', clientController)
+app.use('/', styleController)
 app.use('/schedules', scheduleController)
 
 const PORT = process.env.PORT || 3000;

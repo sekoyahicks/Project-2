@@ -11,7 +11,8 @@ router.get("/", function(_req, res) {
 
   router.get("/:styleId", function(req, res) {
     styleApi.getStyleById(req.params.styleId).then(style => {
-      res.render('style', { style });
+      // res.render('style', { style });
+      res.send(style);
     });
   });
   

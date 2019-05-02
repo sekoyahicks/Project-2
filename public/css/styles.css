@@ -9,7 +9,21 @@ h1 {
     display: flex;
     justify-content: center;
     font-family: fantasy;
-    color: pink;
+    color: purple;
+}
+
+h2 {
+    display: flex;
+    justify-content: center;
+    font-family: fantasy;
+    color: darkgoldenrod;
+}
+
+p {
+    display: flex;
+    justify-content: center;
+    font-family: fantasy;
+    color: purple;
 }
 
 input {
@@ -18,9 +32,32 @@ input {
 
 img {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-self: center;
     width: 20em;
     height: 25em;
+}
+
+a {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    width: 20em;
+    height: 25em;
+    margin: 10px;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    flex-direction: column;
+    width: 20em;
+}
+
+.schedule {
+    text-transform: uppercase;
+    width: 10em;
 }
 
 /* .container{

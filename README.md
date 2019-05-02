@@ -9,6 +9,5 @@ https://salty-garden-22110.herokuapp.com/
 ## Wireframing + Whiteboarding:
 
 <img src="/images/whiteboard.jpg" width=200>
-<img src="" width=200>
-<img src="" width=200>
-
+<img src="/images/wireframe1.jpg" width=200>
+<img src="/images/wireframe2.jpg" width=200>

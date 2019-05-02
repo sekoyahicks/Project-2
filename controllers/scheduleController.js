@@ -1,7 +1,8 @@
 const express = require("express");
 const router = express.Router();
-const scheduleApi = require("../api/scheduleApi.js")
+const styleApi = require("../api/styleApi")
 const clientApi = require("../api/clientApi")
+const scheduleApi = require("../api/scheduleApi")
 
 router.get("/", function(_req, res) {
     scheduleApi.getAllSchedules().then(schedules => {
@@ -38,9 +39,11 @@ router.get("/", function(_req, res) {
   
   //Delete name
   router.delete("/:id", function(req, res) {
-    scheduleApi.deleteSchedule(req.params.id).then(() =>
-      res.render()
-    );
+    scheduleApi.deleteSchedule(req.params.id)
+    .then(() =>  styleApi.getAllStyles())
+    .then(styles => clientApi.getAllClients()
+      .then(clients => scheduleApi.getAllSchedules()
+        .then(schedules => res.render('owner', {schedules, clients, styles}))));
   });
   
   module.exports = router;

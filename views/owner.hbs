@@ -1,0 +1,38 @@
+<h2>Schedules</h2>
+{{#each schedules}}
+<p>{{appointment}}</p>
+<form action="/schedules/{{_id}}?_method=DELETE" method="POST">
+<button>Complete</button>
+</form>
+{{/each}}
+<h2>Styles<h2/>
+
+{{#each styles }}
+<form action="/{{_id}}?_method=PUT" method="POST">
+<input type="text" name="name" value="{{name}}">
+<input type="text" name="description" value="{{description}}">
+<input type="text" name="price" value="{{price}}">
+<input type="text" name="image" value="{{image}}">
+<button>Update Style</button>
+</form>
+<form action="/{{_id}}?_method=DELETE" method="POST">
+    <input type="submit" value="DELETE">
+</form>
+{{/each }}
+
+<form action="/" method="POST">
+<input type="text" name="name" placeholder="name">
+<input type="text" name="description" placeholder="description">
+<input type="text" name="price" placeholder="price">
+<input type="text" name="image" placeholder="image">
+<button>Add Style</button>
+</form>
+
+
+<h2>Clients</h2>
+{{#each clients}}
+<p>{{name}}</p>
+<p>{{email}}</p>
+<p>{{phoneNumber}}</p>
+<form action="/clients/{{_id}}?_method=DELETE" method="POST"><button>Delete Client</button></form>
+{{/each }}

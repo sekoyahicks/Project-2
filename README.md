@@ -8,7 +8,7 @@ https://salty-garden-22110.herokuapp.com/
 
 ## Wireframing + Whiteboarding:
 
-<img src="/Users/sekoyahicks/Desktop/SEI21/Project-2/public/images/whiteboard.jpg" width=200>
+<img src="/images/whiteboard.jpg" width=200>
 <img src="" width=200>
 <img src="" width=200>
 

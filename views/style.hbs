@@ -2,6 +2,8 @@
 <h2>Description</h2>
 <p>{{style.description}}</p>
 
+<img src="{{ style.image }}"/>
+
 <form action="/schedules/register" method="post">
 <input type="hidden" value="{{style._id}}">
 <input type="text" name="name" placeholder="Name">

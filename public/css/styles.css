@@ -1,10 +1,26 @@
 body {
- background: lavender;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background: lavender;
+}
 
+h1 {
+    display: flex;
+    justify-content: center;
+    font-family: fantasy;
+    color: pink;
 }
 
 input {
  color: purple;
+}
+
+img {
+    display: flex;
+    justify-content: center;
+    width: 20em;
+    height: 25em;
 }
 
 /* .container{

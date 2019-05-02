@@ -10,7 +10,7 @@ https://trello.com/b/6qIXfpne/project-2
 https://salty-garden-22110.herokuapp.com/
 
 ## Link to Active CRUD page:
-https://dashboard.heroku.com/apps/salty-garden-22110/owner
+https://salty-garden-22110.herokuapp.com/owner
 
 ## Wireframing + Whiteboarding:
 
